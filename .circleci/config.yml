@@ -13,8 +13,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
-            dnf install -y wget unzip
-            sudo apt-get install -y wget unzip java-1.8.0-openjdk-devel java-11-openjdk-devel
+            dnf install -y wget unzip java-1.8.0-openjdk-devel java-11-openjdk-devel
             wget -U "Any User Agent" https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.6.1/gatling-charts-highcharts-bundle-3.6.1-bundle.zip
             unzip gatling-charts-highcharts-bundle-3.6.1-bundle.zip
             java -version
