@@ -35,7 +35,7 @@ class CalculatorSimulation extends Simulation {
   setUp(
     scn.inject(
       // atOnceUsers(10), // Injects a specific number of users at once
-      rampUsers(10000).during(3600 seconds)
+      rampUsers(10000).during(300 seconds)
       //rampUsers(10000) during (3600 seconds) // Gradually injects users over a period of time
     )
   ).protocols(httpProtocol)
