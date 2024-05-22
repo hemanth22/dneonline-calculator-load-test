@@ -14,7 +14,7 @@ class CalculatorSimulation extends Simulation {
   // Define the SOAP request body
   val addRequestBody =
     """<?xml version="1.0" encoding="utf-8"?>
-      |<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      |<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
       |  <soap:Body>
       |    <Add xmlns="http://tempuri.org/">
       |      <intA>1</intA>
