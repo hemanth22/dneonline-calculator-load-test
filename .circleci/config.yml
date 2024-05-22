@@ -3,7 +3,7 @@ version: 2.1
 executors:
   default:
     docker:
-      - image: quay.io/hemanth22/rockylinux9
+      - image: quay.io/hemanth22/rockylinux9:9
 
 jobs:
   build:
