@@ -21,7 +21,10 @@ jobs:
           name: Run Gatling Simulation
           command: |
             ls -ltra
-            chmod -R 777 gatling-charts-highcharts-bundle-3.6.1/bin/gatling.sh
+            chmod -R 777 gatling-charts-highcharts-bundle-3.6.1
+            cp -v CalculatorSimulation gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/
+            cp -v CalculatorSimulation gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/computerdatabase/
+            cp -v CalculatorSimulation gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/computerdatabase/advanced/            
             gatling-charts-highcharts-bundle-3.6.1/bin/gatling.sh -s CalculatorSimulation
 
 workflows:
