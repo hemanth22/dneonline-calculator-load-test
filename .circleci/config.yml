@@ -16,13 +16,12 @@ jobs:
             sudo apt-get update
             sudo apt-get install -y wget unzip
             wget -U "Any User Agent" https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.11.2/gatling-charts-highcharts-bundle-3.11.2.zip
-            unzip gatling-charts-highcharts-bundle-3.11.2.zip -d /opt
+            unzip gatling-charts-highcharts-bundle-3.11.2.zip
       - run:
           name: Run Gatling Simulation
           command: |
-            mkdir -p /opt/
-            chmod -R 777 /opt/
-            /opt/gatling-charts-highcharts-bundle-3.11.2/bin/gatling.sh -s CalculatorSimulation
+            chmod -R 777 ./gatling-charts-highcharts-bundle-3.11.2/bin/gatling.sh
+            ./gatling-charts-highcharts-bundle-3.11.2/bin/gatling.sh -s CalculatorSimulation
 
 workflows:
   version: 2
