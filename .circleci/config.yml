@@ -27,7 +27,6 @@ jobs:
             gatling-charts-highcharts-bundle-3.6.1/bin/gatling.sh -s calculatoronline.CalculatorSimulation
             mkdir -p /tmp/artifacts
             tar -cvf /tmp/artifacts/loadtest.tar gatling-charts-highcharts-bundle-3.6.1/results/
-          name: Results artefacts
       - store_artifacts:
           path: /tmp/artifacts
 
