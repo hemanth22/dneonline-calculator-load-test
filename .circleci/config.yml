@@ -17,6 +17,7 @@ jobs:
             sudo apt-get install -y wget unzip
             wget -U "Any User Agent" https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.6.1/gatling-charts-highcharts-bundle-3.6.1-bundle.zip
             unzip gatling-charts-highcharts-bundle-3.6.1-bundle.zip
+            java -version
       - run:
           name: Run Gatling Simulation
           command: |
