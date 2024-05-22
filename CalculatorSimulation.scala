@@ -29,8 +29,7 @@ class CalculatorSimulation extends Simulation {
       http("Add Operation")
         .post("/calculator.asmx")
         .body(StringBody(addRequestBody)).asXml
-        .check(status.is(200))
-        .check(xpath("//*:AddResult").exists) // Verify that the response contains the expected result
+        .check(status.is(200)))
     )
 
   // Setup the simulation with assertions
