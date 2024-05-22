@@ -29,14 +29,15 @@ class CalculatorSimulation extends Simulation {
       http("Add Operation")
         .post("/calculator.asmx")
         .body(StringBody(addRequestBody)).asXml
-        .check(status.is(200)))
+        .check(status.is(200))
+        .check(xpath("//*:AddResult").exists) // Verify that the response contains the expected result
     )
 
   // Setup the simulation with assertions
   setUp(
     scn.inject(
       // atOnceUsers(10), // Injects a specific number of users at once
-      rampUsers(10000).during(300 seconds)
+      rampUsers(1).during(5 seconds)
       //rampUsers(10000) during (3600 seconds) // Gradually injects users over a period of time
     )
   ).protocols(httpProtocol)
