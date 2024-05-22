@@ -22,9 +22,12 @@ jobs:
           command: |
             ls -ltra
             chmod -R 777 gatling-charts-highcharts-bundle-3.6.1
+            
             cp -v CalculatorSimulation.scala gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/
             cp -v CalculatorSimulation.scala gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/computerdatabase/
-            cp -v CalculatorSimulation.scala gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/computerdatabase/advanced/            
+            cp -v CalculatorSimulation.scala gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/computerdatabase/advanced/
+            mkdir -p gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/calculatoronline
+            cp -v CalculatorSimulation.scala gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/calculatoronline/
             gatling-charts-highcharts-bundle-3.6.1/bin/gatling.sh -s CalculatorSimulation
 
 workflows:
