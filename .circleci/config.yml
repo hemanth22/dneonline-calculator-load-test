@@ -1,0 +1,29 @@
+version: 2.1
+
+executors:
+  default:
+    docker:
+      - image: circleci/openjdk:11.0.3-jdk
+
+jobs:
+  build:
+    executor: default
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y wget unzip
+            wget https://repo1.maven.org/maven2/io/gatling/gatling-charts-highcharts-bundle/3.6.1/gatling-charts-highcharts-bundle-3.6.1-bundle.zip
+            unzip gatling-charts-highcharts-bundle-3.6.1-bundle.zip -d /opt
+      - run:
+          name: Run Gatling Simulation
+          command: |
+            /opt/gatling-charts-highcharts-bundle-3.6.1/bin/gatling.sh -s CalculatorSimulation
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - build
