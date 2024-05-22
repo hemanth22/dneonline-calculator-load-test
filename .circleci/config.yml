@@ -26,7 +26,7 @@ jobs:
             cp -v CalculatorSimulation.scala gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/calculatoronline/
             gatling-charts-highcharts-bundle-3.6.1/bin/gatling.sh -s calculatoronline.CalculatorSimulation
             mkdir -p /tmp/artifacts
-            tar -cvf /tmp/artifacts/loadtest.tar gatling-charts-highcharts-bundle-3.6.1/results/
+            tar -cf /tmp/artifacts/loadtest.tar gatling-charts-highcharts-bundle-3.6.1/results/
       - store_artifacts:
           path: /tmp/artifacts
 
