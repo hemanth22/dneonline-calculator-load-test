@@ -14,19 +14,19 @@ jobs:
           name: Install Dependencies
           command: |
             dnf install -y wget unzip java-1.8.0-openjdk-devel java-11-openjdk-devel
-            wget -U "Any User Agent" https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.6.1/gatling-charts-highcharts-bundle-3.6.1-bundle.zip
-            unzip gatling-charts-highcharts-bundle-3.6.1-bundle.zip
+            wget -U "Any User Agent" https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.7.3/gatling-charts-highcharts-bundle-3.7.3-bundle.zip
+            unzip gatling-charts-highcharts-bundle-3.7.3-bundle.zip
             java -version
       - run:
           name: Run Gatling Simulation
           command: |
             ls -ltra
-            chmod -R 777 gatling-charts-highcharts-bundle-3.6.1
-            mkdir -p gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/calculatoronline
+            chmod -R 777 gatling-charts-highcharts-bundle-3.7.3
+            mkdir -p gatling-charts-highcharts-bundle-3.7.3/user-files/simulations/calculatoronline
             cp -v CalculatorSimulation.scala gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/calculatoronline/
-            gatling-charts-highcharts-bundle-3.6.1/bin/gatling.sh -s calculatoronline.CalculatorSimulation
+            gatling-charts-highcharts-bundle-3.7.3/bin/gatling.sh -s calculatoronline.CalculatorSimulation
             mkdir -p /tmp/artifacts
-            tar -cf /tmp/artifacts/loadtest.tar gatling-charts-highcharts-bundle-3.6.1/results/
+            tar -cf /tmp/artifacts/loadtest.tar gatling-charts-highcharts-bundle-3.7.3/results/
       - store_artifacts:
           path: /tmp/artifacts
 
