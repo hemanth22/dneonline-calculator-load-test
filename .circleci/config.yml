@@ -23,7 +23,7 @@ jobs:
             ls -ltra
             chmod -R 777 gatling-charts-highcharts-bundle-3.7.3
             mkdir -p gatling-charts-highcharts-bundle-3.7.3/user-files/simulations/calculatoronline
-            cp -v CalculatorSimulation.scala gatling-charts-highcharts-bundle-3.6.1/user-files/simulations/calculatoronline/
+            cp -v CalculatorSimulation.scala gatling-charts-highcharts-bundle-3.7.3/user-files/simulations/calculatoronline/
             gatling-charts-highcharts-bundle-3.7.3/bin/gatling.sh -s calculatoronline.CalculatorSimulation
             mkdir -p /tmp/artifacts
             tar -cf /tmp/artifacts/loadtest.tar gatling-charts-highcharts-bundle-3.7.3/results/
